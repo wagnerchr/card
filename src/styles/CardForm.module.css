@@ -1,0 +1,58 @@
+/* styles/CardForm.module.css */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  color: #fff; 
+  padding: 20px; 
+  border-radius: 8px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+  align-items: center;
+  }
+  
+  .label {
+    display: flex; 
+    margin-bottom: 8px; 
+  }
+  
+  .input,
+  .textarea {
+    justify-content: center
+    ;
+    align-items: center;
+    display: flex;
+    padding: 10px; 
+    width: 500px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd; 
+    border-radius: 4px;
+    background-color: #fff; 
+    color: #333; 
+  }
+  
+  .input:focus,
+  .textarea:focus {
+    border-color: #0070f3; /* Cor da borda ao focar */
+    outline: none; /* Remove o contorno padrão */
+  }
+  
+  .button {
+    background-color: #0070f3; /* Cor de fundo do botão */
+    width: 200px;
+    color: #fff; /* Cor do texto do botão */
+    padding: 10px 15px; /* Espaçamento interno do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 4px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+  }
+  
+  .button:hover {
+    background-color: #005bb5; /* Cor de fundo ao passar o mouse */
+  }
+
+  .cards {
+    display: flex;
+  }
