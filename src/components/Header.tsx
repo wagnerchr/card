@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ onLogin, isAdmin }) => {
 
   return (
     <header>
-      <h1>Meu App de Cards</h1>
+      <h1>Noticiário</h1>
       {!isAdmin ? (
         <div>
           <input 
