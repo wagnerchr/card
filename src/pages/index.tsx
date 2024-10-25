@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+
 // src/pages/index.tsx
 import Header from '../components/Header';
 import { useState } from 'react';

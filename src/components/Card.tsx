@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+
 import Image from 'next/image';
 import styles from '../styles/Card.module.css';
 

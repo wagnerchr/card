@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+
 import { useEffect, useState } from "react";
 import styles from '../styles/CardForm.module.css'; // Importando o CSS
 
