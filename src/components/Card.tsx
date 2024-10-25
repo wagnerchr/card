@@ -1,6 +1,16 @@
 import Image from 'next/image';
 import styles from '../styles/Card.module.css';
 
+
+interface Card {
+  id: number; 
+  title: string;
+  image: string;
+  text: string;
+  createdAt: Date;
+
+}
+
 interface CardProps {
   card: {
     id: number;
@@ -9,7 +19,7 @@ interface CardProps {
     image: string;
     createdAt: Date;
   };
-  onEdit: (card: any) => void;
+  onEdit: (card: Card) => void;
   onDelete: (id: number) => void;
 }
 
@@ -34,7 +44,7 @@ const Card: React.FC<CardProps> = ({ card, onEdit, onDelete }) => {
       <button className={styles.button} onClick={() => onDelete(card.id)}>Excluir</button>
     </div>
   
-    </div>
+  </div>
   );
 };
 

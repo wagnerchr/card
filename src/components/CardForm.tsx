@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 import styles from '../styles/CardForm.module.css'; // Importando o CSS
 
+
+interface Card {
+  id: number;
+  title: string;
+  text: string;
+  image: string;
+  createdAt: Date;
+}
+
 interface CardFormProps {
-  onSubmit: (card: any) => void;
-  card?: {
-    id: number;
-    title: string;
-    text: string;
-    image: string;
-    createdAt: Date;
-  };
+  onSubmit: (card: Card) => void; 
+  card?: Card; 
 }
 
 const CardForm: React.FC<CardFormProps> = ({ onSubmit, card }) => {
@@ -27,7 +30,14 @@ const CardForm: React.FC<CardFormProps> = ({ onSubmit, card }) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    onSubmit({ title, text, image, createdAt: new Date() });
+    const newCard: Card = {
+      id: card ? card.id : Date.now(),
+      title,
+      text,
+      image,
+      createdAt: new Date(),
+    };
+    onSubmit(newCard);
   };
 
   return (
@@ -58,8 +68,8 @@ const CardForm: React.FC<CardFormProps> = ({ onSubmit, card }) => {
           className={styles.input}
         />
       </label>
-      <button type="submit " className={styles.button}>Salvar</button>
-    </form>
+      <button type="submit" className={styles.button}>Salvar</button>
+      </form>
   );
 };
 

@@ -27,7 +27,7 @@
   padding: 0.5rem 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
-  margin: 0.5rem; /* Pequeno espaçamento entre botões */
+  margin: 0.5rem;
 }
 
 .button:hover {

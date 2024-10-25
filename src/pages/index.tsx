@@ -1,24 +1,32 @@
 // src/pages/index.tsx
 import Header from '../components/Header';
-import Card from '../components/Card';
 import { useState } from 'react';
-import { cards } from '../data/cards';
 import CardForm from '@/components/CardForm';
 import styles from '../styles/Home.module.css'; // Importando o CSS
+import Card from '@/components/Card';
+
+interface CardI {
+  id: number;
+  title: string;
+  image: string;
+  text: string;
+  createdAt: Date;
+
+}
 
 const Home = () => {
   const [isAdmin, setIsAdmin] = useState(false);
-  const [cardsList, setCardsList] = useState(cards);
+  const [cardsList, setCardsList] = useState<CardI[]>([]);
 
   const handleLogin = (isAdmin: boolean) => {
     setIsAdmin(isAdmin);
   };
 
-  const handleCreateCard = (card: any) => {
+  const handleCreateCard = (card: CardI) => {
     setCardsList([...cardsList, card]);
   };
 
-  const handleEditCard = (card: any) => {
+  const handleEditCard = (card: CardI) => {
     setCardsList(cardsList.map((c) => (c.id === card.id ? card : c)));
   };
 
@@ -35,7 +43,7 @@ const Home = () => {
         <p className='mt-4'>Faça login para criar cards!</p>
       )}
       <div className={styles.container}>
-        {cardsList.map((card) => (
+        {cardsList.map((card: CardI) => (
           <div className={styles.card} key={card.id}>
             <Card 
               card={card} 

@@ -1,4 +1,3 @@
-// components/Header.tsx
 import { useState } from 'react';
 
 interface HeaderProps {
